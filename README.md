@@ -19,16 +19,17 @@ A Multi-Omics Graph Attention Network for Cancer Diagnosis and Biomarker Identif
   - Model saving and loading (`save_model_dict`, `load_model_dict`)
 ## Usege
 1. **Prepare dataset**  
-   Organize your data folder (e.g., `KIDNEY/`) with:
+   Organize your data folder (e.g., `BRCA/`) with:
    - Features: `1_tr.csv`, `1_te.csv`, `2_tr.csv`, `2_te.csv`, etc.  
    - Labels: `labels_tr.csv`, `labels_te.csv`
 
 2. **Set parameters**  
    In `main_MOGANet.py`, set:
    ```python
-   data_folder = "KIDNEY"
+   data_folder = "BRCA"
    view_list = [1, 2, 3]
-3. **Run training and testing**  
+3. **Run training and testing**
+    ```python
    python main_MOGANet.py
 
 
