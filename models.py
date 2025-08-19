@@ -81,7 +81,7 @@ class GCN_E(nn.Module):
 class Classifier_1(nn.Module):
     def __init__(self, in_dim, out_dim):
         super().__init__()
-        hidden_dim = max(in_dim // 2, out_dim * 2)  # 动态设置隐藏层维度
+        hidden_dim = max(in_dim // 2, out_dim * 2)
         
         self.clf = nn.Sequential(
             # The first layer
