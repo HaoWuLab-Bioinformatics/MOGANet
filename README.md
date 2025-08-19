@@ -1,7 +1,8 @@
 # MOGANet
 A Multi-Omics Graph Attention Network for Cancer Diagnosis and Biomarker Identification
 ## Framework
-![图注说明](MOGANet_framework.jpg)
+!(MOGANet_framework.jpg)
+## Overview
 - **BRCA**: This folder contains all the preprocessed omics data (e.g., mRNA, DNA methylation, miRNA) and label files for the BRCA (Breast Cancer) dataset.
 - **Kidney**: This folder includes the processed multi-omics data and labels for the Kidney (KIPAN) dataset, which combines subtypes such as KIRC and KIRP.
 - **LGG**: This folder stores the processed omics data and corresponding labels for the LGG (Lower Grade Glioma) dataset.
@@ -16,4 +17,18 @@ A Multi-Omics Graph Attention Network for Cancer Diagnosis and Biomarker Identif
   - Graph adjacency matrix generation (`gen_adj_mat_tensor`, `gen_test_adj_mat_tensor`, `cal_adj_mat_parameter`)
   - Sparse tensor conversion (`to_sparse`)
   - Model saving and loading (`save_model_dict`, `load_model_dict`)
+## Usege
+1. **Prepare dataset**  
+   Organize your data folder (e.g., `KIDNEY/`) with:
+   - Features: `1_tr.csv`, `1_te.csv`, `2_tr.csv`, `2_te.csv`, etc.  
+   - Labels: `labels_tr.csv`, `labels_te.csv`
+
+2. **Set parameters**  
+   In `main_MOGANet.py`, set:
+   ```python
+   data_folder = "KIDNEY"
+   view_list = [1, 2, 3]
+3. **Run training and testing**  
+   python main_MOGANet.py
+
 
