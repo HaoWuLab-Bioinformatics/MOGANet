@@ -1,7 +1,7 @@
 # MOGANet
 A Multi-Omics Graph Attention Network for Cancer Diagnosis and Biomarker Identification
 ## Framework
-!(MOGANet_framework.jpg)
+![](MOGANet_framework.jpg)
 ## Overview
 - **BRCA**: This folder contains all the preprocessed omics data (e.g., mRNA, DNA methylation, miRNA) and label files for the BRCA (Breast Cancer) dataset.
 - **Kidney**: This folder includes the processed multi-omics data and labels for the Kidney (KIPAN) dataset, which combines subtypes such as KIRC and KIRP.
