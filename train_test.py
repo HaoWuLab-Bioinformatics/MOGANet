@@ -221,7 +221,7 @@ def train_test_predefined(data_folder, view_list, num_class,
                 print("Train ACC: {:.3f}".format(train_acc))
                 print("Train F1 weighted: {:.3f}".format(train_f1_weighted))
                 print("Train F1 macro: {:.3f}".format(train_f1_macro))
-            else:  # LGG, KIDNEY, ROSMAP
+            else:  # LGG, Kidney
                 train_acc = accuracy_score(labels_train, train_pred)
                 train_f1 = f1_score(labels_train, train_pred, average='weighted')
                 train_auc = roc_auc_score(labels_train, train_prob[:, 1])
