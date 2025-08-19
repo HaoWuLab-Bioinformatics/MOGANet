@@ -17,6 +17,13 @@ A Multi-Omics Graph Attention Network for Cancer Diagnosis and Biomarker Identif
   - Graph adjacency matrix generation (`gen_adj_mat_tensor`, `gen_test_adj_mat_tensor`, `cal_adj_mat_parameter`)
   - Sparse tensor conversion (`to_sparse`)
   - Model saving and loading (`save_model_dict`, `load_model_dict`)
+## Dependency
+- Python ≥ 3.8
+- `numpy`
+- `pandas`
+- `torch` (PyTorch)
+- `scikit-learn`
+- `torch.nn.functional` (comes with PyTorch)
 ## Usege
 1. **Prepare dataset**  
    Organize your data folder (e.g., `BRCA/`) with:
