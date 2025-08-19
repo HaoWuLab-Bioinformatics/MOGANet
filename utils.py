@@ -33,7 +33,6 @@ def cosine_distance_torch(x1, x2=None, eps=1e-8):
 
 
 def pearson_correlation_torch(x1, x2=None, eps=1e-8):
-    # 确保输入是torch张量
     if not isinstance(x1, torch.Tensor):
         x1 = torch.FloatTensor(x1)
     if x2 is not None and not isinstance(x2, torch.Tensor):
@@ -44,18 +43,18 @@ def pearson_correlation_torch(x1, x2=None, eps=1e-8):
         x1 = x1.cuda()
         x2 = x2.cuda()
     
-    # 中心化数据
+    # Center the data
     x1_centered = x1 - torch.mean(x1, dim=1, keepdim=True)
     x2_centered = x2 - torch.mean(x2, dim=1, keepdim=True)
     
-    # 计算标准差
+    # Compute the standard deviation
     x1_std = torch.sqrt(torch.sum(x1_centered ** 2, dim=1, keepdim=True))
     x2_std = torch.sqrt(torch.sum(x2_centered ** 2, dim=1, keepdim=True))
     
-    # 计算皮尔逊相关系数
+    # Calculate the Pearson correlation coefficient
     corr = torch.mm(x1_centered, x2_centered.t()) / (x1_std * x2_std.t()).clamp(min=eps)
     
-    # 将相关系数转换为距离（1 - |corr|）
+    # Convert correlation coefficient to distance (1 - |corr|）
     return 1 - torch.abs(corr)
 
 
